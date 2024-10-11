@@ -10,7 +10,6 @@ module.exports = {
         serif: ['Poltawski Nowy', 'serif'], 
       },
       colors: {
-        black: '#000000',  
         white: '#FFFFFF', 
         fawn: '#FAF5EE', 
         yellow: '#F7EC87',

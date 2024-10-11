@@ -1,102 +1,21 @@
 import React from "react";
-import TopicsSlider from "./_modules/topics_slider/TopicsSlider";
+import TopicsSlider from "@/components/topics/TopicsSlider";
+import PostCardsLarge from "@/components/postcards/PostCardsLarge";
+import GetTopicsList from "@/api/GetTopicsList";
 
-const topics__listobj = [
-  {
-    title: "Design",
-    src: "/topics/design",
-    icon: (
-      <>
-        <path d="m352-522 86-87-56-57-44 44-56-56 43-44-45-45-87 87 159 158Zm328 329 87-87-45-45-44 43-56-56 43-44-57-56-86 86 158 159Zm24-567 57 57-57-57ZM290-120H120v-170l175-175L80-680l200-200 216 216 151-152q12-12 27-18t31-6q16 0 31 6t27 18l53 54q12 12 18 27t6 31q0 16-6 30.5T816-647L665-495l215 215L680-80 465-295 290-120Zm-90-80h56l392-391-57-57-391 392v56Zm420-419-29-29 57 57-28-28Z" />
-      </>
-    ),
-  },
-  {
-    title: "Build",
-    src: "/topics/build",
-    icon: (
-      <>
-        <path d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z"/>
-      </>
-    ),
-  },
-  {
-    title: "Philosophy",
-    src: "/topics/philosophy",
-    icon: (
-      <>
-        <path d="M480-80q-73-9-145-39.5T206.5-207Q150-264 115-351T80-560v-40h40q51 0 105 13t101 39q12-86 54.5-176.5T480-880q57 65 99.5 155.5T634-548q47-26 101-39t105-13h40v40q0 122-35 209t-91.5 144q-56.5 57-128 87.5T480-80Zm-2-82q-11-166-98.5-251T162-518q11 171 101.5 255T478-162Zm2-254q15-22 36.5-45.5T558-502q-2-57-22.5-119T480-742q-35 59-55.5 121T402-502q20 17 42 40.5t36 45.5Zm78 236q37-12 77-35t74.5-62.5q34.5-39.5 59-98.5T798-518q-94 14-165 62.5T524-332q12 32 20.5 70t13.5 82Zm-78-236Zm78 236Zm-80 18Zm46-170ZM480-80Z"/>
-      </>
-    ),
-  },
-  {
-    title: "Lifestyle",
-    src: "/topics/lifestyle",
-    icon: (
-      <>
-        <path d="M272-160q-30 0-51-21t-21-51q0-21 12-39.5t32-26.5l156-62v-90q-54 63-125.5 96.5T120-320v-80q68 0 123.5-28T344-508l54-64q12-14 28-21t34-7h40q18 0 34 7t28 21l54 64q45 52 100.5 80T840-400v80q-83 0-154.5-33.5T560-450v90l156 62q20 8 32 26.5t12 39.5q0 30-21 51t-51 21H400v-20q0-26 17-43t43-17h120q9 0 14.5-5.5T600-260q0-9-5.5-14.5T580-280H460q-42 0-71 29t-29 71v20h-88Zm208-480q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/>
-      </>
-    ),
-  },
-  {
-    title: "Artistry",
-    src: "/topics/artistry",
-    icon: (
-      <>
-        <path d="M400-120q-66 0-113-47t-47-113q0-66 47-113t113-47q23 0 42.5 5.5T480-418v-422h240v160H560v400q0 66-47 113t-113 47Z"/>
-      </>
-    ),
-  },
-  {
-    title: "Food",
-    src: "/topics/food",
-    icon: (
-      <>
-      <path d="M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z"/>
-      </>
-    ),
-  },
-  {
-    title: "Programming",
-    src: "/topics/programming",
-    icon: (
-      <>
-      <path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/>
-      </>
-    ),
-  },
-  {
-    title: "Tech",
-    src: "/topics/tech",
-    icon: (
-      <>
-      <path d="M80-160v-120h80v-440q0-33 23.5-56.5T240-800h600v80H240v440h240v120H80Zm520 0q-17 0-28.5-11.5T560-200v-400q0-17 11.5-28.5T600-640h240q17 0 28.5 11.5T880-600v400q0 17-11.5 28.5T840-160H600Zm40-120h160v-280H640v280Zm0 0h160-160Z"/>
-      </>
-    ),
-  },
-  {
-    title: "Gardening",
-    src: "/topics/gardening",
-    icon: (
-      <>
-      <path d="M342-160h276l40-160H302l40 160Zm0 80q-28 0-49-17t-28-44l-45-179h520l-45 179q-7 27-28 44t-49 17H342ZM200-400h560v-80H200v80Zm280-240q0-100 70-170t170-70q0 90-57 156t-143 80v84h320v160q0 33-23.5 56.5T760-320H200q-33 0-56.5-23.5T120-400v-160h320v-84q-86-14-143-80t-57-156q100 0 170 70t70 170Z"/>
-      </>
-    ),
-  },
-  
-  {
-    title: "Pets",
-    src: "/topics/pets",
-    icon: (
-      <>
-      <path d="M180-475q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180-160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm240 0q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180 160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM266-75q-45 0-75.5-34.5T160-191q0-52 35.5-91t70.5-77q29-31 50-67.5t50-68.5q22-26 51-43t63-17q34 0 63 16t51 42q28 32 49.5 69t50.5 69q35 38 70.5 77t35.5 91q0 47-30.5 81.5T694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z"/>
-      </>
-    ),
-  },
-];
-
-export default function Home() {
+export default async function HomePage() {
+  const topicsListApiResponse = await GetTopicsList();
+  const topicsList = topicsListApiResponse.status=="pass" ? topicsListApiResponse.data : []
   return (
-    <TopicsSlider topics__listobj={topics__listobj}/>
+    <>
+    <TopicsSlider topics__listobj={topicsList}/>
+    <div>
+      <p className="px-5 md:px-8 lg:px-10 py-7 md:py-8 lg:py-10 font-sans font-extrabold text-xl lg:text-3xl">Featured for you</p>
+    </div>
+    <PostCardsLarge />
+    <div>
+      <p className="px-5 md:px-8 lg:px-10 py-7 md:py-8 lg:py-10 font-sans font-extrabold text-xl lg:text-3xl">Popular Now</p>
+    </div>
+    </>
   );
 }
