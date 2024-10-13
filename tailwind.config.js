@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        serif: ['Poltawski Nowy', 'serif'], 
+        serif: ['Poltawski Nowy', 'serif'],
+        mono: ['Source Code Pro', 'monospace'], 
       },
       colors: {
         white: '#FFFFFF', 
@@ -31,7 +32,8 @@ module.exports = {
       },
       fontSize: {
         '1xs': '0.625rem',
-        '2xs': '0.5rem'
+        '2xs': '0.5rem',
+        '5xl': '2.5rem'
       }
     },
   },

@@ -1,26 +1,22 @@
-"use server";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+// --- FUNCTIONALITIES ---
+// 1. mobile:1 tablet:2 large:1 ✔️
 
-export const PostCardsMedium = ({ postsList }) => {
+export const PostCardsRelated = ({ postsList }) => {
   return (
-    <div className="flex flex-col md:flex-row md:flex-wrap border-y-black border-t-2px md:border-t-3px w-full">
+    <div className="flex flex-col md:flex-row md:flex-wrap w-full">
       {postsList.map((post, index) => (
         <article
           key={post.id}
-          className={`md:w-1/2 lg:w-1/3 border-x-black border-x-0 md:border-x-1.5px border-b-black border-b-2px md:border-b-3px 
-            first:border-l-0 last:border-r-0 
-            ${(index + 1) % 2 === 0 && "md:border-r-0 lg:border-r-1.5px"}
-            ${(index + 1) % 3 === 0 && "md:border-l-0 md:border-r-1.5px lg:border-l-1.5px lg:border-r-0"}
-            ${(index + 1) % 2 !== 0 && (index + 1) % 3 !== 0 && "md:border-l-0 lg:border-l-1.5px"}
-            ${(index + 3) % 3 === 0 && "lg:border-l-0"}
-            ${(index + 3) % 6 === 0 && "lg:border-r-0"}
+          className={`md:w-1/2 lg:w-full 
+            border-t-black border-t-2px md:border-t-3px 
             transition-all duration-200 ease-in-out hover:brightness-95 active:brightness-95`}
         >
           <Link
             className="flex p-1 md:p-2 min-h-full"
-            href={"/"+ post.topic + "/" + post.link}
+            href={"/" + post.link}
             aria-label={`Read more about ${post.name}`}
             style={{ backgroundColor: post.color }}
           >
@@ -34,9 +30,9 @@ export const PostCardsMedium = ({ postsList }) => {
               />
               <figcaption className="sr-only">{post.name}</figcaption>
             </figure>
-            <div className="flex flex-col justify-center w-2/3 px-2 md:px-3 lg:px-4 py-8 ">
-              <span className="font-sans font-semibold text-xs uppercase tracking-wide mb-1 opacity-50">{post.topic}</span>
-              <h3 className="font-serif text-lg md:text-xl font-black leading-normal">{post.name}</h3>
+            <div className="flex flex-col justify-center px-2 md:px-3 lg:px-4 py-8 ">
+              {/* <span className="font-sans font-semibold text-xs lg:text-xs uppercase tracking-wide mb-1 opacity-50">{post.topic}</span> */}
+              <h3 className="text-base font-semibold font-sans leading-snug">{post.name}</h3>
             </div>
           </Link>
         </article>
@@ -44,11 +40,10 @@ export const PostCardsMedium = ({ postsList }) => {
       {postsList.length % 3 !== 0 || postsList.length % 2 !== 0 ? (
         <div
           className={`flex-grow first:border-l-0 last:border-r-0 border-b-black border-b-0 md:border-b-3px border-x-black border-x-1px md:border-x-1.5px`}
-          aria-hidden="true"
         ></div>
       ) : null}
     </div>
   );
 };
 
-export default PostCardsMedium;
+export default PostCardsRelated;

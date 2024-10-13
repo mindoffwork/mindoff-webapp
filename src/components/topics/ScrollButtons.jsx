@@ -54,14 +54,14 @@ export const ScrollButtons = ({ idToScroll }) => {
       <aside className="absolute top-0 left-0 hidden md:flex justify-between items-center h-full w-full pointer-events-none">
         <button
           className={`flex flex-col p-1 items-center justify-center h-full border-r-3px border-black pointer-events-auto ${
-            canScrollLeft ? "bg-yellow" : "bg-fawn"
+            canScrollLeft ? "bg-yellow" : "bg-fawn cursor-not-allowed"
           }`}
           onClick={() => scrollLeft(idToScroll)}
           aria-label="Scroll left"
-          disabled={!canScrollLeft}
+          aria-disabled={!canScrollRight}
         >
           <span
-            class="material-symbols-outlined w-5 h-5 lg:w-6 lg:h-6"
+            className="material-symbols-outlined w-5 h-5 lg:w-6 lg:h-6"
             aria-hidden="true"
           >
             chevron_left
@@ -70,14 +70,14 @@ export const ScrollButtons = ({ idToScroll }) => {
 
         <button
           className={`flex flex-col p-1 items-center justify-center h-full border-l-3px border-black pointer-events-auto ${
-            canScrollRight ? "bg-yellow" : "bg-fawn"
+            canScrollRight ? "bg-yellow" : "bg-fawn cursor-not-allowed"
           }`}
           onClick={() => scrollRight(idToScroll)}
           aria-label="Scroll right"
-          disabled={!canScrollRight}
+          aria-disabled={!canScrollRight}
         >
           <span
-            class="material-symbols-outlined w-5 h-5 lg:w-6 lg:h-6"
+            className="material-symbols-outlined w-5 h-5 lg:w-6 lg:h-6"
             aria-hidden="true"
           >
             chevron_right

@@ -6,7 +6,6 @@ import Image from "next/image";
 const SplashScreen = ({ children }) => {
   const [showSplash, setShowSplash] = useState(true);
   const [zoomOut, setZoomOut] = useState(false);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setZoomOut(true);
@@ -23,24 +22,18 @@ const SplashScreen = ({ children }) => {
   return (
     <>
       {showSplash && (
-        <section
-          className={`fixed inset-0 flex items-center justify-center bg-fawn z-50 transform transition-transform duration-300 ${
-            zoomOut ? "scale-0" : "scale-100"
-          }`}
+        <div
+          className={`fixed inset-0 flex items-center justify-center bg-fawn z-50 transform transition-transform duration-300`}
+          aria-hidden="true"
         >
-          <figure>
-            <Image
-              src="/images/MindOff_Logo_Full.svg"
-              alt="Mind Off Logo"
-              className="w-48 h-auto"
-              width={1921}
-              height={731}
-            />
-            <figcaption className="sr-only">Mind Off Logo</figcaption>
-          </figure>
-        </section>
+            <figure className={`transform transition-transform duration-300 ${
+              zoomOut ? "scale-0" : "scale-100"
+            }`}>
+              <Image src="/images/MindOff_Logo_Full.svg" alt="Mind Off Logo" className="w-48 h-auto" width={1921} height={731} />
+              <figcaption className="sr-only">Mind Off Logo</figcaption>
+            </figure>
+        </div>
       )}
-      {!showSplash && children}
     </>
   );
 };

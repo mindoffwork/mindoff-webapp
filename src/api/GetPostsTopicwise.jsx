@@ -1,6 +1,7 @@
 "use server";
-const GetTopicwisePostList = async (topic_name, type = null) => {
-  const ENDPOINT_URL = "dist/posts/" + topic_name + ".json";
+
+const GetPostsTopicwise = async (topicName, type = null) => {
+  const ENDPOINT_URL = "dist/posts_topic__" + topicName + ".json";
   const API_URL = process.env.FILESTORAGE_URL + ENDPOINT_URL;
   const PURGE_URL = process.env.FILESTORAGE_PURGE_URL + ENDPOINT_URL;
   let response;
@@ -22,4 +23,4 @@ const GetTopicwisePostList = async (topic_name, type = null) => {
   return { status: "pass", data: await response.json() };
 };
 
-export default GetTopicwisePostList;
+export default GetPostsTopicwise;

@@ -1,14 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-// --- POST CARDS LARGE FUNCTIONALITIES ---
-// 1. 3 cards per row on screens above medium ✔️
-// 2. scrollable single row on small screens ✔️
-// 3. Outline to align responsively and properly ✔️
-// 4. Text and Padding Responsiveness for different screens ✔️
-// 5. Responsive image with square aspect ratio✔️
-// 6. Dynamic Card background Color ✔️
-
 
 export const PostCardsLarge = () => {
   const illustrateionLink = "https://cdn.jsdelivr.net/gh/mindoffdev/illustrate-ions@root/"
@@ -78,7 +70,7 @@ export const PostCardsLarge = () => {
           </div>
           <div className="mt-4 p-2 md:p-3 lg:p-4">
           <p className="font-sans font-semibold text-xs lg:text-sm uppercase tracking-wide mb-2 opacity-50">{card.topic}</p>
-            <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold font-serif ">{card.title}</h2>
+            <h2 className="text-xl lg:text-2xl font-extrabold font-serif ">{card.title}</h2>
           </div>
         </Link>
       ))}

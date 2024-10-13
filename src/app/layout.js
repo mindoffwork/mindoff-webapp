@@ -1,6 +1,6 @@
 // These styles apply to every route in the application
 import "@/app/global.css";
-import FloatingLogo from "@/components/FloatingLogo";
+
 import SplashScreen from "@/components/SplashScreen";
 export default function RootLayout({ children }) {
   return (
@@ -12,10 +12,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-fawn text-black overscroll-none mb-24">
-        <SplashScreen>
-          <FloatingLogo />
-          {children}
-        </SplashScreen>
+        <SplashScreen />
+
+        {children}
       </body>
     </html>
   );
