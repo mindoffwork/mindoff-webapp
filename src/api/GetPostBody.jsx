@@ -1,7 +1,7 @@
 import React from "react";
 
-const GetPostJson = async (postSlug) => {
-  const ENDPOINT_URL = "posts/" + postSlug + "/" + "post.json";
+const GetPostBody = async (postSlug) => {
+  const ENDPOINT_URL = "posts/" + postSlug + "/" + "post_body.json";
   const API_URL = process.env.FILESTORAGE_URL + ENDPOINT_URL;
   let response;
   response = await fetch(API_URL, {
@@ -15,4 +15,4 @@ const GetPostJson = async (postSlug) => {
   return { status: "pass", data: await response.json() };
 };
 
-export default GetPostJson;
+export default GetPostBody;

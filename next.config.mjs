@@ -12,6 +12,23 @@ const nextConfig = {
             hostname: 'cdn.dribbble.com',
             port: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'cdn-icons-png.flaticon.com',
+            port: '',
+          },
+          {
+            protocol: 'https',
+            hostname: 'raw.githubusercontent.com',
+            port: '',
+          },
+          {
+            protocol: 'https',
+            hostname: 'images.unsplash.com',
+            port: '',
+          },
+          
+          
         ],
       },
 };

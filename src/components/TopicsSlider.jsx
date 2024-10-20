@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { ScrollButtons } from "./ScrollButtons";
 
-const TopicsSlider = ({ topicsList, currentTopic = null }) => {
+const TopicsSlider = async ({topicsList, currentTopic=null}) => {
   return (
     <section className="relative border-y-black border-y-2px md:border-y-3px">
       <nav aria-label="Topics Navigation">

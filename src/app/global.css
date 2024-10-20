@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,9 @@
 ::selection {
   @apply bg-green text-black;
 }
-
+html {
+  @apply scroll-smooth;
+}
 /* Hide scrollbar */
 .scrollable::-webkit-scrollbar {
   display: none;
@@ -20,33 +22,9 @@
   scrollbar-width: none; /* Firefox */
 }
 
-/* Special Scrollable */
-
-/* Track */
-/* @layer base {
-  ::-webkit-scrollbar {
-    @apply w-2 ;
-  }
-  ::-webkit-scrollbar-track {
-    @apply bg-black bg-opacity-5;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-green;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-black bg-opacity-80;
-  }
-  ::-webkit-scrollbar-thumb:active {
-    @apply bg-black bg-opacity-50;
-  }
-  ::-webkit-scrollbar-corner {
-    @apply hidden;
-  }
-} */
-
 /* Material Fonts */
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
+  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 48;
 }
 
 /* Raw Content */
@@ -116,7 +94,7 @@
   }
 
   .content blockquote {
-    @apply border-l-4 border-green p-4 italic text-black mb-6 bg-black bg-opacity-5;
+    @apply border-l-4 border-green p-4 italic text-black mb-6 bg-black bg-opacity-5 rounded-r-md ;
   }
 
   .content em {
@@ -128,7 +106,7 @@
   }
 
   .content table {
-    @apply w-full border-collapse mb-6;
+    @apply w-full border-collapse mb-6 ;
   }
 
   .content th,
@@ -141,7 +119,13 @@
   }
 
   .content pre {
-    @apply font-mono text-sm px-4 py-6 text-gray-600 bg-black bg-opacity-5 text-left mb-6 overflow-auto;
+    @apply font-mono font-normal rounded-md text-sm px-4 py-6 text-gray-600 bg-black bg-opacity-5 text-left mb-6 overflow-auto;
+  }
+  .content li pre,
+  .content p pre,
+  .content li code,
+  .content p code {
+    @apply font-mono font-normal rounded text-sm mx-1 align-middle px-1 py-1 text-red bg-black bg-opacity-5 text-left mb-6 overflow-auto;
   }
 
   .content mark {
@@ -153,7 +137,7 @@
   }
 
   .content img {
-    @apply inline-block m-1;
+    @apply inline-block m-1 w-full h-auto;
   }
   .content figcaption {
     @apply italic text-sm font-mono tracking-tight opacity-90;
@@ -163,5 +147,61 @@
   }
   .content a:hover {
     @apply opacity-100 border-opacity-100 bg-yellow;
+  }
+  .content aside {
+    @apply font-sans text-base leading-7 font-medium opacity-90 bg-black bg-opacity-5 p-4 border-green border-l-4;
+  }
+  .content aside p {
+    @apply mb-0;
+  }
+  .content .gist {
+    @apply block relative mb-6;
+    .gist-file {
+      @apply mb-0 font-mono border-0;
+    }
+
+    .gist-data {
+      @apply bg-black bg-opacity-5 rounded-t-md;
+    }
+
+    .blob-wrapper {
+      @apply py-3 bg-transparent;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .highlight,
+      .highlight * {
+        @apply bg-transparent font-mono tracking-tight text-sm;
+
+        &::selection,
+        & *::selection {
+          @apply bg-green text-black;
+        }
+      }
+
+      td {
+        @apply text-black border-0;
+      }
+    }
+    .blob-num {
+      @apply px-0 cursor-default;
+    }
+    .blob-num:before {
+      @apply text-black opacity-30;
+    }
+
+    .gist-meta {
+      @apply font-mono bg-black bg-opacity-5 text-transparent text-[0px] rounded-b-md first:hidden select-none;
+    }
+    .gist-meta a:nth-child(2){
+      @apply text-black text-opacity-50 text-sm;
+    }
+
+    .gist-meta a:nth-child(1),
+    .gist-meta a:nth-child(3) {
+      @apply hidden;
+    }
   }
 }

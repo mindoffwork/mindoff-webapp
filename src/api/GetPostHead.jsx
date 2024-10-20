@@ -1,7 +1,7 @@
 import React from "react";
 
-const GetPostHtml = async (postSlug) => {
-  const ENDPOINT_URL = "posts/" + postSlug + "/" + "post.html";
+const GetPostHead = async (postSlug) => {
+  const ENDPOINT_URL = "posts/" + postSlug + "/" + "post_head.json";
   const API_URL = process.env.FILESTORAGE_URL + ENDPOINT_URL;
   let response;
   response = await fetch(API_URL, {
@@ -12,7 +12,7 @@ const GetPostHtml = async (postSlug) => {
   if (!response.ok) {
     return { status: "fail", data: "file not found" };
   }
-  return { status: "pass", data: await response.text() };
+  return { status: "pass", data: await response.json() };
 };
 
-export default GetPostHtml;
+export default GetPostHead;

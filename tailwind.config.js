@@ -8,13 +8,15 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         serif: ['Poltawski Nowy', 'serif'],
-        mono: ['Source Code Pro', 'monospace'], 
+        mono: ['Inconsolata', 'monospace'], 
       },
       colors: {
         white: '#FFFFFF', 
         fawn: '#FAF5EE', 
         yellow: '#F7EC87',
         green: '#D8E995',
+        red: '#D85757',
+        brown: '#F4E4BC',
       },
       spacing: {
         '1px': '0.063rem',
