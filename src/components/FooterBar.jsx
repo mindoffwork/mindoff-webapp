@@ -33,8 +33,8 @@ const FooterBar = () => {
   ];
 
   return (
-    <footer className="mt-auto bg-yellow">
-      <ul className="flex flex-wrap gap-y-4 gap-x-4 list-none px-4 md:px-16 pt-6 pb-16 md:pb-6 justify-center text-center md:justify-end">
+    <footer className="mt-auto bg-yellow ">
+      <ul className="flex flex-wrap gap-y-4 gap-x-4 list-none px-4 md:px-16 pt-6 pb-16 md:pb-6 justify-center text-center md:justify-end border-black border-t-2px md:border-t-3px -mt-2px md:-mt-3px">
         {footerLinkList.map((footeritem, index) => (
           <li key={footeritem.id} className={`font-sans font-medium text-black text-sm tracking-wide opacity-60`}>
             <Link className="hover:opacity-100 hover:bg-black hover:bg-opacity-10 transition duration-200 text-nowrap" href={footeritem.link}>

@@ -30,7 +30,7 @@ export const PostCardsSmall = ({ postsList, typeOfCard }) => {
                   className="w-full h-full max-w-full object-scale-down"
                 />
               </figure>
-              <figcaption className="sr-only">Cover Image for {post.name}</figcaption>
+              {/* <figcaption className="absolute">Cover Image for {post.name}</figcaption> */}
             </Link>
           )}
           {typeOfCard === "text" && (
@@ -40,7 +40,7 @@ export const PostCardsSmall = ({ postsList, typeOfCard }) => {
               href={"/" + post.topic + "/" + post.link}
               aria-label={`Read more about ${post.name}`}
             >
-              <article className="p-2 md:p-3 lg:px-8 lg:py-24">
+              <article className="p-8 lg:px-8 lg:py-24">
                 <span className="font-sans font-semibold text-xs lg:text-sm uppercase tracking-wide mb-2 opacity-50">{post.topic}</span>
                 <h2 className="font-serif font-extrabold text-xl lg:text-2xl mb-5">{post.name}</h2>
                 <span

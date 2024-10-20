@@ -41,15 +41,14 @@ export default async function TopicPage(topic_slug) {
 
   return (
     <>
-      <header>
-        <FloatingLogo />
-        <TopicsSlider topicsList={topicsList} currentTopic={currentSlug} />
-      </header>
       <main className="flex-grow">
-        <header aria-labelledby="topic-header" className="px-5 md:px-10 lg:px-14 py-12 md:py-16 lg:w-3/6">
+        <header aria-labelledby="topic-header">
+          <TopicsSlider topicsList={topicsList} currentTopic={currentSlug} />
+          <section className="px-5 md:px-10 lg:px-14 py-12 md:py-16 lg:w-3/6">
             <h1 className="font-sans font-black text-3xl mb-4">{currentTopicObject.name}</h1>
             <p className="font-serif font-normal text-xl">{currentTopicObject.description}</p>
             {postsList.length > 0 && <SortOptions contentList={sortOptions} currentOption={sortSlug} />}
+          </section>
         </header>
 
         <section aria-label="Posts Section">

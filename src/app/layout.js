@@ -1,9 +1,10 @@
 // These styles apply to every route in the application
 import "@/app/global.css";
 import SplashScreen from "@/components/SplashScreen";
+import FloatingLogo from "@/components/FloatingLogo";
 import FooterBar from "@/components/FooterBar";
 
-export default function RootLayout({ children, params }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className="overscroll-none">
       <head>
@@ -14,6 +15,10 @@ export default function RootLayout({ children, params }) {
       </head>
       <body className="min-h-screen flex flex-col bg-fawn text-black overscroll-none">
         <SplashScreen />
+        <header>
+          <FloatingLogo />
+        </header>
+
         {children}
         <FooterBar />
       </body>

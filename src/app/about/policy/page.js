@@ -5,9 +5,6 @@ import FloatingLogo from "@/components/FloatingLogo";
 function PolicyPage() {
   return (
     <>
-      <header>
-        <FloatingLogo />
-      </header>
       <main className="flex flex-col lg:flex-row min-h-screen border-black border-b-2px md:border-b-3px ">
         <article className="w-full lg:w-3/4 order-2">
           <header>

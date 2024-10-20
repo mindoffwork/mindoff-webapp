@@ -20,18 +20,18 @@ export default async function HomePage() {
   if (Object.keys(postsList).length === 0 || topicsList.length === 0 || !featuredPostsList || !popularPostsList || !recommendedPostsList) {
     throw new Error("Error: TopicsList or PostsList API ran out of Juice");
   }
+  
   return (
     <>
-      <header>
-        <FloatingLogo />
-        <section className="px-5 md:px-10 lg:px-14 py-12 md:py-16 lg:w-3/6">
-          <h1 className="font-sans font-black text-3xl md:text-5xl leading-tight">Simplifying Work to Elevate living</h1>
-          <p className="font-serif font-normal text-xl mt-4">Choose a topic you love and dive right in!</p>
-        </section>
-        <TopicsSlider topicsList={topicsList} />
-      </header>
       <main className="flex-grow">
-        <header></header>
+        <header>
+          <section className="px-5 md:px-10 lg:px-14 py-12 md:py-16 lg:w-3/6 ">
+            <h1 className="font-sans font-black text-3xl md:text-5xl leading-tight">Simplifying Work to Elevate living</h1>
+            <p className="sr-only"></p>
+            <span className="font-serif font-normal text-xl mt-4">Choose a topic you love and dive right in!</span>
+          </section>
+          <TopicsSlider topicsList={topicsList} />
+        </header>
         <section className="flex flex-col">
           <div className="px-5 md:px-10 lg:px-14 py-7 md:py-8 lg:py-10 lg:w-3/6">
             <p className="font-sans font-extrabold text-xl lg:text-2xl">Featured for you</p>

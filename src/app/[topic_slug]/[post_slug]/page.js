@@ -66,12 +66,8 @@ export default async function PostPage(post_slug) {
 
   return (
     <>
-      <header>
-        <FloatingLogo />
-        <TopicsSlider topicsList={topicsList} currentTopic={topicSlug} />
-      </header>
-
       <main className="flex-grow">
+        <TopicsSlider topicsList={topicsList} currentTopic={topicSlug} />
         <article className="flex flex-col lg:flex-row min-h-screen border-black border-b-2px md:border-b-3px">
           {/* Content Image */}
           <section className="lg:w-4/12 max-h-screen lg:sticky lg:top-0">
