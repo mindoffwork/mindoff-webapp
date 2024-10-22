@@ -1,7 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import GetGithubRepos from "@/api/GetGithubRepos";
 
-export const PostCardsGithub = ({ postsList }) => {
+export const CardsGithub = async () => {
+  const postsListApiResponse = await GetGithubRepos();
+  const postsList = postsListApiResponse.status == "pass" ? postsListApiResponse.data : [];
   return (
     <ul className="list-none flex flex-col md:flex-row md:flex-wrap border-y-black border-t-2px md:border-t-3px w-full">
       {postsList.map((post, index) => (
@@ -45,4 +48,4 @@ export const PostCardsGithub = ({ postsList }) => {
   );
 };
 
-export default PostCardsGithub;
+export default CardsGithub;

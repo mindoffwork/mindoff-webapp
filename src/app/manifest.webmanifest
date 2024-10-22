@@ -1,0 +1,21 @@
+{
+  "name": "Mind Off",
+  "short_name": "MindOff",
+  "description": "A blog covering topics related to science",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#faf5ee",
+  "background_color": "#faf5ee",
+  "icons": [
+    {
+      "src": "/images/MindOff_Logo_YellowRounded_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/MindOff_Logo_YellowRounded_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

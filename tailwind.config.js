@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        serif: ['Poltawski Nowy', 'serif'],
+        serif: ['Ubuntu', 'sans-serif'],
+        // serif: ['Poltawski Nowy', 'serif'],
         mono: ['Inconsolata', 'monospace'], 
       },
       colors: {

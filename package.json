@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "dompurify": "^3.1.7",
+    "eslint-plugin-next": "^0.0.0",
     "html-react-parser": "^5.1.18",
     "jsdom": "^25.0.1",
     "next": "14.2.14",
+    "nprogress": "^0.2.0",
     "prismjs": "^1.29.0",
     "react": "^18",
     "react-dom": "^18",
@@ -21,6 +23,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "eslint": "8.57.1",
+    "eslint-config-next": "15.0.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"
   }

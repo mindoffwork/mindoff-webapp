@@ -1,11 +1,9 @@
 import React from "react";
-import ButtonLink from "@/components/ButtonLink";
-import BlockImage from "@/components/jsonxhtml/BlockImage";
-import PostCardsSmall from "@/components/PostCardsSmall";
-import PostCardsGithub from "@/components/PostCardsGithub";
-import GetPostsHome from "@/api/GetPostsHome";
-import GetGithubRepos from "@/api/GetGithubRepos";
-import FloatingLogo from "@/components/FloatingLogo";
+import ButtonLink from "@/components/buttons/ButtonLink";
+import BlockImage from "@/components/contents/BlockImage";
+import PostCardsSmall from "@/components/cards/CardsFour";
+import PostCardsGithub from "@/components/cards/CardsGithub";
+
 
 const pageTitle = "About Mindoff";
 const pageDescription =
@@ -14,9 +12,7 @@ const pageSrc = "https://mindoff.dev/images/logo/MindOff_Logo_YellowBgFull.png";
 const pageAlt = "Mind Off Logo";
 
 export default async function AboutPage() {
-  const [postsListApiResponse, reposListApiResponse] = await Promise.all([GetPostsHome(), GetGithubRepos()]);
-  const postsList = postsListApiResponse.status == "pass" ? postsListApiResponse.data : {};
-  const reposList = reposListApiResponse.status == "pass" ? reposListApiResponse.data : [];
+  
   const combinedPostsList = postsList?.is_featured.concat(postsList?.is_recommended);
 
   const getRandomFour = (arr) => {

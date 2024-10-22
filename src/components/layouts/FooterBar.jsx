@@ -1,5 +1,4 @@
 import React from "react";
-import ButtonLink from "./ButtonLink";
 import Link from "next/link";
 
 const FooterBar = () => {
