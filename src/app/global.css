@@ -33,10 +33,10 @@ html {
 /* Raw Content */
 @layer base {
   .content {
-    @apply font-serif font-normal text-xl;
+    @apply font-serif font-normal text-lg;
   }
   .content p {
-    @apply mb-6;
+    @apply mb-4 tracking-normal leading-7 md:leading-8;
   }
 
   .content ul,
@@ -77,23 +77,19 @@ html {
   }
 
   .content h2 {
-    @apply font-sans text-3xl font-extrabold mt-10 mb-3 first:mt-0;
+    @apply font-sans text-2xl md:text-3xl font-extrabold mt-12 mb-5 first:mt-0;
   }
 
   .content h3 {
-    @apply font-sans text-2xl font-extrabold mt-8 mb-3;
+    @apply font-sans text-xl md:text-2xl font-extrabold mt-10 mb-4;
   }
 
   .content h4 {
-    @apply font-sans text-xl font-extrabold mt-6 mb-3;
+    @apply font-sans text-lg md:text-xl font-extrabold mt-6 mb-3;
   }
 
   .content h5 {
     @apply font-sans text-lg font-extrabold mt-5 mb-3;
-  }
-
-  .content h6 {
-    @apply font-sans text-base font-extrabold mt-5 mb-3;
   }
 
   .content blockquote {
@@ -146,7 +142,7 @@ html {
     @apply italic text-sm font-mono tracking-tight opacity-90;
   }
   .content a {
-    @apply border-black border-b-2px opacity-60 border-opacity-50 transition duration-200;
+    @apply border-black border-b-2px opacity-60 border-opacity-50 transition duration-200 break-words;
   }
   .content a:hover {
     @apply opacity-100 border-opacity-100 bg-yellow;

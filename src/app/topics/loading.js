@@ -6,6 +6,11 @@ export default function Loading() {
 				<div className="h-16 bg-black bg-opacity-10 rounded-md mb-4 w-3/5 animate-pulse"></div>
 				<div className="h-8 bg-black bg-opacity-10 rounded-md w-4/5 mb-4 animate-pulse"></div>
 				<div className="h-8 bg-black bg-opacity-10 rounded-md w-4/5 mb-4 animate-pulse"></div>
+				<div className="flex space-x-4 animate-pulse ">
+					<div className="h-10 w-24 bg-black bg-opacity-10 rounded-md"></div>
+					<div className="h-10 w-24 bg-black bg-opacity-10 rounded-md"></div>
+					<div className="h-10 w-24 bg-black bg-opacity-10 rounded-md"></div>
+				</div>
 			</div>
 		</div>
 	);

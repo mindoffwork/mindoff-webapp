@@ -6,7 +6,7 @@ import GetPostHead from "@/api/GetPostHead";
 import GetPostBody from "@/api/GetPostBody";
 import GetGithubRepos from "@/api/GetGithubRepos";
 
-const ApiCaller = async (apiName, formatName = null, sortBy = "Latest") => {
+const ApiCaller = async (apiName, formatName = null, sortBy = "Latest", noOfPosts=null) => {
   let output = [];
   let apiResponse = { status: "fail", data: [] };
 
@@ -16,8 +16,7 @@ const ApiCaller = async (apiName, formatName = null, sortBy = "Latest") => {
     output = apiResponse.status === "pass" ? apiResponse.data : [];
     const showcaseGroups = {
       featured: "is_featured",
-      popular: "is_popular",
-      recommended: "is_recommended",
+      popular: "is_popular"
     };
     output = output?.[showcaseGroups[formatName]] || [];
   } else if (apiName === "GetPostsTopicwise") {
@@ -29,6 +28,7 @@ const ApiCaller = async (apiName, formatName = null, sortBy = "Latest") => {
   } else if (apiName === "GetPostHead") {
     apiResponse = await GetPostHead(formatName);
     output = apiResponse.status === "pass" ? apiResponse.data : [];
+    
   } else if (apiName === "GetPostBody") {
     apiResponse = await GetPostBody(formatName);
     output = apiResponse.status === "pass" ? apiResponse.data : [];
@@ -44,6 +44,10 @@ const ApiCaller = async (apiName, formatName = null, sortBy = "Latest") => {
     });
   }
 
+  // 3. Process -- Slicing
+  if (noOfPosts) {
+    output = output.slice(0, noOfPosts); 
+  }
   return output;
 };
 

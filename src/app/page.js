@@ -1,52 +1,43 @@
 import React, { Suspense } from "react";
-import CardsThree from "@/components/cards/CardsThree";
-import CardsThreeSkeleton from "@/components/cards/CardsThreeSkeleton";
-import CardsOne from "@/components/cards/CardsOne";
-import CardsOneTwoSkeleton from "@/components/cards/CardsOneTwoSkeleton";
-import CardsFour from "@/components/cards/CardsFour";
-
+import CardsGithub from "@/components/cards/CardsGithub";
+import CardsFeatured from "@/components/cards/CardsFeatured";
+import CardsFeaturedSkeleton from "@/components/cards/CardsFeaturedSkeleton";
+import CardsGithubSkeleton from "@/components/cards/CardsGithubSkeleton";
 export default async function HomePage() {
-  // 2. Handle -- Errors
-  // if (Object.keys(postsList).length === 0 || topicsList.length === 0 || !featuredPostsList || !popularPostsList || !recommendedPostsList) {
-  //   throw new Error("Error: TopicsList or PostsList API ran out of Juice");
-  // }
-
-  return (
-    <>
-      <main className="flex-grow">
-        <header>
-          <section className="px-5 md:px-10 lg:px-14 py-12 md:py-16 lg:w-3/6 ">
-            <h1 className="font-sans font-black text-3xl md:text-5xl leading-tight mb-4">Simplifying Work to Elevate living</h1>
-            <p className="sr-only">My Culmination of wisdom for creative minds around the world to learn, explore and prosper.</p>
-            <span className="font-serif font-normal text-xl ">Choose a topic you love and dive right in!</span>
-          </section>
-        </header>
-
-        <section className="flex flex-col">
-          <div className="px-5 md:px-10 lg:px-14 py-7 md:py-8 lg:py-10 lg:w-3/6">
-            <p className="font-sans font-extrabold text-xl lg:text-2xl">Featured for You</p>
-          </div>
-          <Suspense fallback={<CardsOneTwoSkeleton />}>
-            <CardsOne apiName={"GetPostsExpo"} formatName={"featured"} />
-          </Suspense>
-        </section>
-        <section>
-          <div className="px-5 md:px-10 lg:px-14 py-7 md:py-8 lg:py-10 lg:w-3/6">
-            <p className="font-sans font-extrabold text-xl lg:text-2xl">Popular Now</p>
-          </div>
-          <Suspense fallback={<CardsThreeSkeleton />}>
-            <CardsThree apiName={"GetPostsExpo"} formatName={"popular"} />
-          </Suspense>
-        </section>
-        <section>
-          <div className="px-5 md:px-10 lg:px-14 py-7 md:py-8 lg:py-10 lg:w-3/6">
-            <p className="font-sans font-extrabold text-xl lg:text-2xl">Recommended by MindOff</p>
-          </div>
-          <Suspense fallback={<CardsOneTwoSkeleton />}>
-            <CardsFour apiName={"GetPostsExpo"} formatName={"recommended"} />
-          </Suspense>
-        </section>
-      </main>
-    </>
-  );
+	return (
+		<main className="flex-grow mb-12 md:mb-24">
+			<header className="w-10/12 mx-auto my-12 md:my-24">
+				<h1 className="font-black text-3xl md:text-4xl leading-normal md:leading-normal w-full md:w-6/12 ">
+					Explore
+					<span className="font-light tracking-wide mt-2">
+						{" "}
+						purpose, minimalism, design and creativity
+					</span>
+				</h1>
+			</header>
+			<section>
+				<Suspense fallback={<CardsFeaturedSkeleton />}>
+					<CardsFeatured
+						apiName={"GetPostsExpo"}
+						formatName={"featured"}
+						id={1}
+					/>
+				</Suspense>
+			</section>
+			<section className="mt-20">
+				<div className="w-10/12 mx-auto mb-16">
+					<h1 className="font-black text-3xl md:text-4xl leading-normal md:leading-normal mb-12 md:w-7/12">
+						Discover opensource
+						<span className="font-light tracking-wide mt-2">
+							{" "}
+							projects crafted to declutter, aid and elevate living
+						</span>
+					</h1>
+				</div>
+				<Suspense fallback={<CardsGithubSkeleton />}>
+					<CardsGithub apiName={"GetGithubRepos"} />
+				</Suspense>
+			</section>
+		</main>
+	);
 }
