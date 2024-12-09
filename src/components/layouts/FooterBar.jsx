@@ -36,7 +36,7 @@ const FooterBar = () => {
 						className={`font-sans font-medium text-black text-sm tracking-wide opacity-60`}
 					>
 						<Link
-							className="hover:opacity-100 hover:bg-black hover:bg-opacity-10 transition duration-200 text-nowrap"
+							className="hover:opacity-100 hover:bg-black hover:bg-opacity-10 transition duration-200 text-nowrap rounded-sm"
 							href={footeritem.link}
 						>
 							{footeritem.name}

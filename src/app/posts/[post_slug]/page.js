@@ -1,5 +1,5 @@
 "use server";
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import BlockText from "@/components/contents/BlockText";
@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import CardsOne from "@/components/cards/CardsOne";
 import Link from "next/link";
 import BlockTitle from "@/components/contents/BlockTitle";
+import CardsOneSkeleton from "@/components/cards/CardsOneSkeleton";
 
 export default async function PostPage(post_slug) {
 	// 1. Gather -- Slugs & Passed Down Data
@@ -173,13 +174,15 @@ export default async function PostPage(post_slug) {
 						id={2}
 						cardType={"CardsThree"}
 					/>
-					<CardsThree
-						apiName={"GetPostsTopicwise"}
-						formatName={postHead.topic}
-						noOfPosts={8}
-						id={2}
-						excludePost={postSlug}
-					/>
+					<Suspense fallback={<CardsThreeSkeleton />}>
+						<CardsThree
+							apiName={"GetPostsTopicwise"}
+							formatName={postHead.topic}
+							noOfPosts={8}
+							id={2}
+							excludePost={postSlug}
+						/>
+					</Suspense>
 				</section>
 				<section className="w-full">
 					<BlockTitle
@@ -190,12 +193,14 @@ export default async function PostPage(post_slug) {
 						cardType={"CardsFour"}
 						isScrollButtons={false}
 					/>
-					<CardsOne
-						apiName={"GetPostsExpo"}
-						formatName={"featured"}
-						id={3}
-						excludeTopic={postHead.topic}
-					/>
+					<Suspense fallback={<CardsOneSkeleton />}>
+						<CardsOne
+							apiName={"GetPostsExpo"}
+							formatName={"featured"}
+							id={3}
+							excludeTopic={postHead.topic}
+						/>
+					</Suspense>
 				</section>
 			</aside>
 		</main>
