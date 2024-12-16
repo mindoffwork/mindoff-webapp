@@ -47,7 +47,9 @@ export default function PolicyPage() {
 					<h1 className="font-sans font-black text-4xl md:text-5xl mb-6">
 						{pageTitle}
 					</h1>
-					<p className="font-serif font-light text-xl md:text-2xl leading-normal md:leading-normal mb-4"></p>
+					<p className="font-serif font-light text-xl md:text-2xl leading-normal md:leading-normal mb-4">
+						{pageDescription}
+					</p>
 				</div>
 			</header>
 			<section className="flex flex-col lg:flex-row min-h-screen ">
@@ -223,7 +225,10 @@ export default function PolicyPage() {
 											Creative Commons Attribution 4.0 International License
 										</strong>
 										. You can view the license here:{" "}
-										<Link href="https://creativecommons.org/licenses/by/4.0/">
+										<Link
+											target="_blank"
+											href="https://creativecommons.org/licenses/by/4.0/"
+										>
 											https://creativecommons.org/licenses/by/4.0/
 										</Link>
 										.
@@ -441,7 +446,7 @@ export default function PolicyPage() {
 									review the terms periodically for any changes. The most recent
 									version of our terms and privacy policy can always be found
 									here:&nbsp;
-									<Link href="/policy">https://www.mindoff.work/policy</Link>.
+									<Link href="/policy">{process.env.URL + "policy"}</Link>.
 								</p>
 								<p>
 									If significant changes are made, we may notify users via a
