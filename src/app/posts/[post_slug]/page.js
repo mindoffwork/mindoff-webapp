@@ -15,6 +15,44 @@ import Link from "next/link";
 import BlockTitle from "@/components/contents/BlockTitle";
 import CardsOneSkeleton from "@/components/cards/CardsOneSkeleton";
 
+// META DATA + OG
+export async function generateMetadata(post_slug) {
+	// 1. Fetch post data (e.g., post head for metadata)
+	const postSlug = post_slug.params.post_slug;
+	const postHead = await ApiCaller("GetPostHead", postSlug, null);
+
+	// 2. Handle error
+	if (!postHead || postHead.length === 0) {
+		notFound();
+	}
+
+	// 3. Construct metadata
+	return {
+		title: `${postHead.name}: ${postHead.subtitle}`,
+		description: postHead.description,
+		openGraph: {
+			type: "article",
+			title: postHead.title,
+			description: postHead.description,
+			images: [
+				{
+					url: process.env.ILUSTRATION_URL + postHead.img,
+					alt: postHead.img_alt,
+				},
+			],
+			url: "posts/" + postSlug,
+			siteName: process.env.NAME,
+		},
+		alternates: {
+			canonical: "posts/" + postSlug,
+		},
+		robots: {
+			index: true,
+			follow: true,
+		},
+	};
+}
+
 export default async function PostPage(post_slug) {
 	// 1. Gather -- Slugs & Passed Down Data
 	const postSlug = post_slug.params.post_slug;
@@ -26,7 +64,7 @@ export default async function PostPage(post_slug) {
 	]);
 
 	// 3. Handle -- Errors
-	if (postHead.length === 0) {
+	if (!postHead || postHead.length === 0) {
 		notFound();
 	}
 
@@ -46,7 +84,6 @@ export default async function PostPage(post_slug) {
 		);
 		return Math.ceil(totalLength / (250 * 5)) + " minutes"; // Approximate reading time
 	};
-
 	const postReadingTime = calculateApproxReadingTime(postBody);
 
 	return (
@@ -155,7 +192,7 @@ export default async function PostPage(post_slug) {
 								</span>
 								<span className="sr-only">Topic:&nbsp;</span>
 								<ButtonLink
-									link={"/" + postHead.topic}
+									link={"/topics/" + postHead.topic}
 									content={postHead.topic}
 								/>
 							</li>

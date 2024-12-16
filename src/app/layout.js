@@ -5,35 +5,35 @@ import SplashScreen from "@/components/layouts/SplashScreen";
 import HeaderBar from "@/components/layouts/HeaderBar";
 import FooterBar from "@/components/layouts/FooterBar";
 import NextTopLoader from "nextjs-toploader";
+
 export const viewport = {
 	themeColor: "#faf5ee",
 };
 export const metadata = {
 	title: {
-		template: "%s - Mind Off",
-		default: "Mind Off: Creativity Unleashed",
+		template: "%s - " + process.env.NAME,
+		default: process.env.TITLE,
 	},
-	description:
-		"My Culmination of wisdom for creative minds around the world to learn, explore and prosper",
-	metadataBase: new URL("https://mindoff.work"),
-	alternates: {
-		canonical: "/",
-	},
+	description: process.env.DESCRIPTION,
+	metadataBase: new URL(process.env.URL),
 	openGraph: {
 		type: "website",
 		title: {
-			template: "%s - Mind Off",
-			default: "Mind Off: Creativity Unleashed",
+			template: "%s - " + process.env.NAME,
+			default: process.env.TITLE,
 		},
-		description: "The React Framework for the Web",
+		description: process.env.DESCRIPTION,
 		images: [
 			{
-				url: "http://localhost:3000/images/logo/MindOff_Logo_YellowBgFull.png",
-				alt: "Mind Off Logo",
+				url: process.env.LOGO,
+				alt: process.env.NAME + " Logo",
 			},
 		],
-		url: "http://localhost:3000/",
-		siteName: process.env.SITENAME,
+		url: "/",
+		siteName: process.env.NAME,
+	},
+	alternates: {
+		canonical: "/",
 	},
 	robots: {
 		index: true,

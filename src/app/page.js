@@ -3,6 +3,8 @@ import CardsGithub from "@/components/cards/CardsGithub";
 import CardsFeatured from "@/components/cards/CardsFeatured";
 import CardsFeaturedSkeleton from "@/components/cards/CardsFeaturedSkeleton";
 import CardsGithubSkeleton from "@/components/cards/CardsGithubSkeleton";
+import Head from "next/head";
+
 export default async function HomePage() {
 	return (
 		<main className="flex-grow mb-12 md:mb-24">

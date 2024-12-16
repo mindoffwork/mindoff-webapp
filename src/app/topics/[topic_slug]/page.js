@@ -5,11 +5,54 @@ import SortOptions from "@/components/buttons/SortOptions";
 import { notFound } from "next/navigation";
 import ApiCaller from "@/components/ApiCaller";
 
+// META DATA + OG
+export async function generateMetadata(topic_slug) {
+	const topicSlug = topic_slug.params.topic_slug;
+
+	// 1. Gather -- API Response
+	const topicsList = await ApiCaller("GetTopics");
+	const currentTopicObject = topicsList.find(
+		(topic) => topic.link === topicSlug
+	);
+
+	// 2. Handle -- Errors
+	if (topicsList.length === 0) {
+		throw new Error("Error: Topics API is not responding");
+	}
+	if (!currentTopicObject) {
+		notFound();
+	}
+	return {
+		title: currentTopicObject.name,
+		description: currentTopicObject.description,
+		openGraph: {
+			type: "website",
+			title: currentTopicObject.name,
+			description: currentTopicObject.description,
+			images: [
+				{
+					url: process.env.LOGO,
+					alt: process.env.NAME + " Logo",
+				},
+			],
+			url: "topics/" + topicSlug,
+			siteName: process.env.NAME,
+		},
+		alternates: {
+			canonical: "topics/" + topicSlug,
+		},
+		robots: {
+			index: true,
+			follow: true,
+		},
+	};
+}
+
 export default async function TopicPage(topic_slug) {
 	const topicSlug = topic_slug.params.topic_slug;
 	const sortQuery = topic_slug.searchParams.sort;
 
-	// 2. Gather -- API Response
+	// 1. Gather -- API Response
 
 	const topicsList = await ApiCaller("GetTopics");
 	const currentTopicObject = topicsList.find(

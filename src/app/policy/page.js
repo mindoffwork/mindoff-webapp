@@ -2,22 +2,52 @@ import React from "react";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import Image from "next/image";
 import Link from "next/link";
-function PolicyPage() {
+
+const pageTitle = "Terms & Privacy Policy";
+const pageDescription = `MindOff is all about sharing wisdom, creativity, and personal
+						experiences with the world. Here, you can explore guidance and
+						information on a range of topics, including design, lifestyle, tech,
+						programming, gardening, and more. Whether you’re learning something
+						new or finding inspiration, MindOff is intended to be a valuable
+						resource for your accomplishments.`;
+
+// META DATA + OG
+export async function generateMetadata() {
+	return {
+		title: pageTitle,
+		description: pageDescription,
+		openGraph: {
+			type: "website",
+			title: pageTitle,
+			description: pageDescription,
+			images: [
+				{
+					url: process.env.LOGO,
+					alt: process.env.NAME + " Logo",
+				},
+			],
+			url: "policy",
+			siteName: process.env.NAME,
+		},
+		alternates: {
+			canonical: "policy",
+		},
+		robots: {
+			index: false,
+			follow: true,
+		},
+	};
+}
+
+export default function PolicyPage() {
 	return (
 		<main>
 			<header>
 				<div className="w-10/12 md:w-4/6 py-12 md:py-24 mx-auto">
 					<h1 className="font-sans font-black text-4xl md:text-5xl mb-6">
-						Terms & Privacy Policy
+						{pageTitle}
 					</h1>
-					<p className="font-serif font-light text-xl md:text-2xl leading-normal md:leading-normal mb-4">
-						MindOff is all about sharing wisdom, creativity, and personal
-						experiences with the world. Here, you can explore guidance and
-						information on a range of topics, including design, lifestyle, tech,
-						programming, gardening, and more. Whether you’re learning something
-						new or finding inspiration, MindOff is intended to be a valuable
-						resource for your accomplishments.
-					</p>
+					<p className="font-serif font-light text-xl md:text-2xl leading-normal md:leading-normal mb-4"></p>
 				</div>
 			</header>
 			<section className="flex flex-col lg:flex-row min-h-screen ">
@@ -411,10 +441,7 @@ function PolicyPage() {
 									review the terms periodically for any changes. The most recent
 									version of our terms and privacy policy can always be found
 									here:&nbsp;
-									<Link href="/about/policy">
-										https://www.mindoff.work/policy
-									</Link>
-									.
+									<Link href="/policy">https://www.mindoff.work/policy</Link>.
 								</p>
 								<p>
 									If significant changes are made, we may notify users via a
@@ -503,5 +530,3 @@ function PolicyPage() {
 		</main>
 	);
 }
-
-export default PolicyPage;
