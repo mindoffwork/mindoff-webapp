@@ -1,21 +1,20 @@
-import React from 'react'
+"use server";
 
 const GetGithubRepos = async () => {
-  const gitUrl = process.env.GITHUB_URL;
-  const token = process.env.GITHUB_TOKEN;
+	const gitUrl = process.env.GITHUB_URL;
+	const token = process.env.GITHUB_TOKEN;
 
-  const response = await fetch(gitUrl, {
-    method: "GET",
-    headers: {
-      Authorization: `token ${token}`,
-    },
-    cache: "force-cache",
-    next: { tags: ["api_tag"] },
-  });
-  if (!response.ok) {
-    return { status: "fail", data: "Github API Not Working" };
-  }
-  return { status: "pass", data: await response.json() };
-}
+	const response = await fetch(gitUrl, {
+		method: "GET",
+		headers: {
+			Authorization: `token ${token}`,
+		},
+		next: { revalidate: 3600 },
+	});
+	if (!response.ok) {
+		return { status: "fail", data: "Github API Not Working" };
+	}
+	return { status: "pass", data: await response.json() };
+};
 
-export default GetGithubRepos
+export default GetGithubRepos;

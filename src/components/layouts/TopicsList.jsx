@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ScrollButtons } from "../buttons/ScrollButtons";
 import { useParams } from "next/navigation";
+
 const TopicsList = ({ topicsList }) => {
 	const params = useParams();
 	const currentTopic = params.topic_slug;
@@ -27,7 +28,7 @@ const TopicsList = ({ topicsList }) => {
 			}`}
 		>
 			<nav
-				className="relative w-full md:pl-16 border-b-black border-opacity-5 border-t-2px md:border-b-3px bg-fawn backdrop-blur-md bg-opacity-80 overflow-x-auto scrollable"
+				className="relative w-full md:pl-16 border-b-black border-opacity-5 border-t-2px md:border-t-0 md:border-b-3px bg-fawn backdrop-blur-md bg-opacity-80 overflow-x-auto scrollable"
 				aria-label="Topics Navigation"
 				id="topics_slider__id"
 			>

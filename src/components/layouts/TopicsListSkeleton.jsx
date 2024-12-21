@@ -1,32 +1,30 @@
 import React from "react";
 
 const TopicsListSkeleton = () => {
-  return (
-    <div className="relative border-y-black border-y-2px md:border-y-3px">
-      <div aria-label="Topics Navigation">
-        <ul className="flex overflow-x-auto scrollable flex-row list-none overscroll-none">
-          <li className="flex flex-col flex-shrink-0 items-center bg-white border-x-black border-x-1px md:border-x-1.5px first:border-l-0 last:border-r-0 md:last:border-r-3px">
-            <div className="flex flex-col items-center justify-center py-6 px-6 md:px-8 lg:px-10 animate-pulse">
-              <div className="bg-black bg-opacity-10 rounded-full w-5 h-5 lg:w-6 lg:h-6"></div>
-              <div className="mt-2 bg-black bg-opacity-10 h-4 w-16 lg:w-20 rounded-md"></div>
-            </div>
-          </li>
-          <li className="flex flex-col flex-shrink-0 items-center bg-white border-x-black border-x-1px md:border-x-1.5px first:border-l-0 last:border-r-0 md:last:border-r-3px">
-            <div className="flex flex-col items-center justify-center py-6 px-6 md:px-8 lg:px-10 animate-pulse">
-              <div className="bg-black bg-opacity-10 rounded-full w-5 h-5 lg:w-6 lg:h-6"></div>
-              <div className="mt-2 bg-black bg-opacity-10 h-4 w-16 lg:w-20 rounded-md"></div>
-            </div>
-          </li>
-          <li className="flex flex-col flex-shrink-0 items-center bg-white border-x-black border-x-1px md:border-x-1.5px first:border-l-0 last:border-r-0 md:last:border-r-3px">
-            <div className="flex flex-col items-center justify-center py-6 px-6 md:px-8 lg:px-10 animate-pulse">
-              <div className="bg-black bg-opacity-10 rounded-full w-5 h-5 lg:w-6 lg:h-6"></div>
-              <div className="mt-2 bg-black bg-opacity-10 h-4 w-16 lg:w-20 rounded-md"></div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
+	return (
+		<section className="fixed bottom-0 md:top-0 left-0 z-30 w-full h-fit transition-all duration-500">
+			<nav
+				className="relative w-full md:pl-16 border-b-black border-opacity-5 border-t-2px md:border-t-0 md:border-b-3px bg-fawn backdrop-blur-md bg-opacity-80 overflow-x-auto scrollable"
+				aria-label="Topics Navigation"
+				id="topics_slider__id"
+			>
+				<ul className="list-none flex">
+					<li className="flex flex-shrink-0 items-center justify-center space-x-2 px-3 py-3 w-auto animate-pulse">
+						<div className="bg-black opacity-5 w-8 h-8 rounded-full"></div>
+						<div className="bg-black opacity-5 w-16 h-6 rounded-md"></div>
+					</li>
+					<li className="flex flex-shrink-0 items-center justify-center space-x-2 px-3 py-3 w-auto animate-pulse">
+						<div className="bg-black opacity-5 w-8 h-8 rounded-full"></div>
+						<div className="bg-black opacity-5 w-16 h-6 rounded-md"></div>
+					</li>
+					<li className="flex flex-shrink-0 items-center justify-center space-x-2 px-3 py-3 w-auto animate-pulse">
+						<div className="bg-black opacity-5 w-8 h-8 rounded-full"></div>
+						<div className="bg-black opacity-5 w-16 h-6 rounded-md"></div>
+					</li>
+				</ul>
+			</nav>
+		</section>
+	);
 };
 
 export default TopicsListSkeleton;

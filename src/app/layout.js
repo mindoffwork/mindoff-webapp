@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-page-custom-font */
 // These styles apply to every route in the application
 import "@/app/global.css";
+import { Suspense } from "react";
+import TopicsListSkeleton from "@/components/layouts/TopicsListSkeleton";
 import SplashScreen from "@/components/layouts/SplashScreen";
 import HeaderBar from "@/components/layouts/HeaderBar";
 import FooterBar from "@/components/layouts/FooterBar";
@@ -53,7 +55,9 @@ export default async function RootLayout({ children }) {
 			</head>
 			<body className="min-h-screen flex flex-col bg-fawn text-black overscroll-none">
 				<SplashScreen />
-				<HeaderBar />
+				<Suspense fallback={<TopicsListSkeleton />}>
+					<HeaderBar />
+				</Suspense>
 				<NextTopLoader
 					color="#000000"
 					height={3}
