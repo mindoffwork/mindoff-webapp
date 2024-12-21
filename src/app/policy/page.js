@@ -1,6 +1,5 @@
 import React from "react";
 import ButtonLink from "@/components/buttons/ButtonLink";
-import Image from "next/image";
 import Link from "next/link";
 
 const pageTitle = "Terms & Privacy Policy";

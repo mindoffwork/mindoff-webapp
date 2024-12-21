@@ -22,7 +22,7 @@ const FooterBar = () => {
 		},
 		{
 			id: 3,
-			name: "©️ " + copyrightYearRange + " " + process.env.SITEFULLNAME,
+			name: "©️ " + copyrightYearRange + " " + process.env.SITENAME,
 			link: "/",
 		},
 	];
