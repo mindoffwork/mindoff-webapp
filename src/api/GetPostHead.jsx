@@ -5,7 +5,7 @@ const GetPostHead = async (postSlug) => {
 	const API_URL = process.env.FILESTORAGE_URL + ENDPOINT_URL;
 	const response = await fetch(API_URL, {
 		method: "GET",
-		next: { revalidate: 3600 },
+		next: { tags: ["global"] },
 	});
 	if (!response.ok) {
 		return { status: "fail", data: "file not found" };

@@ -2,15 +2,18 @@ import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
+
 export default async function RefreshPage() {
 	// Revalidate the cache tag
 	try {
-		revalidateTag("api_tag");
+		await revalidateTag("global");
 		console.log("Revalidated successfully!");
 	} catch (error) {
 		console.error("Revalidation failed:", error);
 	}
-	redirect("/"); // Redirect to the homepage
+
+	// Redirect to the homepage
+	redirect("/");
 
 	// Optionally return a fallback in case redirect doesn't trigger immediately
 	return (

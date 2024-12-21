@@ -9,7 +9,7 @@ const GetGithubRepos = async () => {
 		headers: {
 			Authorization: `token ${token}`,
 		},
-		next: { revalidate: 3600 },
+		next: { tags: ["global"] },
 	});
 	if (!response.ok) {
 		return { status: "fail", data: "Github API Not Working" };
