@@ -12,15 +12,15 @@ const BlockTitle = ({
 	const Tag = htmlTag;
 	return (
 		<div className="flex justify-between w-11/12 md:w-10/12 mx-auto py-7 md:py-8 lg:py-12">
-			<Tag class="flex items-center font-poppins font-extrabold tracking-widest uppercase md:tracking-widest md:text-base text-sm">
+			<Tag className="flex items-center font-poppins font-extrabold tracking-widest uppercase md:tracking-widest md:text-base text-sm">
 				{boldText && (
 					<span
-						class="inline-block h-1 w-8 bg-current"
+						className="inline-block h-1 w-8 bg-current"
 						aria-hidden="true"
 					></span>
 				)}
-				<span class="ml-2">{boldText}</span>
-				<span class="pl-2 font-light md:tracking-widest md:text-base text-sm">
+				<span className="ml-2">{boldText}</span>
+				<span className="pl-2 font-light md:tracking-widest md:text-base text-sm">
 					{lightText}
 				</span>
 			</Tag>
