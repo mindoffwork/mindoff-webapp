@@ -2,7 +2,7 @@
 
 A Blog featuring my culmination of wisdom and projects for creative minds
 
-![Static Badge](https://img.shields.io/badge/Version-1.0_alpha-brightgreen?style=flat)
+![Static Badge](https://img.shields.io/badge/Version-0.5.0-brightgreen?style=flat)
 
 ## Steps to Run the Source
 
