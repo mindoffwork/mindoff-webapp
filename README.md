@@ -1,6 +1,6 @@
 # MindOff.Work
 
-A Blog featuring my culmination of wisdom for creative minds
+A Blog featuring my culmination of wisdom and projects for creative minds
 
 ![Static Badge](https://img.shields.io/badge/Version-1.0_alpha-brightgreen?style=flat)
 
