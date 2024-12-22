@@ -59,9 +59,8 @@ export default async function AboutPage() {
 						aria-label="Sort Posts"
 					>
 						<ButtonLink content={"Contact"} link={"#contact"} />
-						<ButtonLink content={"Pinterest"} link={"#social"} />
-						<ButtonLink content={"Github"} link={"#social"} />
-						<ButtonLink content={"Dribbble"} link={"#social"} />
+						<ButtonLink content={"Pinterest"} link={process.env.PINTEREST} />
+						<ButtonLink content={"Github"} link={process.env.GITHUB} />
 					</div>
 				</section>
 				<section className="flex flex-col justify-center items-center w-11/12 mx-auto px-16 bg-yellow py-32 rounded-xl">
