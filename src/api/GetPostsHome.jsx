@@ -5,7 +5,7 @@ const GetPostsHome = async () => {
 	const API_URL = process.env.FILESTORAGE_URL + ENDPOINT_URL;
 	const response = await fetch(API_URL, {
 		method: "GET",
-		next: { tags: ["global"] },
+		cache: "no-store",
 	});
 	if (!response.ok) {
 		return { status: "fail", data: "file not found" };
