@@ -19,3 +19,10 @@ A Blog featuring my culmination of wisdom and projects for creative minds
 ![Static Badge](https://img.shields.io/badge/Copyright-CC4-brightgreen?style=flat&logo=creativecommons&logoColor=white&labelColor=%23EF9421&color=black)
 
 Any Assets that represents Logo or Intellectual Property of any legal establishment are trademarks of their respective owners and are under their terms and license
+
+### Release Notes:
+
+##### **v0.5.0:**
+
+- 🆕 Integrated Google Analytics for better insights and tracking
+- 🐞 Fixed issue where the same blog post card which is being currently read appeared again in suggestion sections
