@@ -2,6 +2,7 @@
 // These styles apply to every route in the application
 import "@/app/global.css";
 import { Suspense } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import TopicsListSkeleton from "@/components/layouts/TopicsListSkeleton";
 import SplashScreen from "@/components/layouts/SplashScreen";
 import HeaderBar from "@/components/layouts/HeaderBar";
@@ -44,6 +45,8 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
+	const gaId = process.env.GOOGLE_ANALYTICS_ID;
+
 	return (
 		<html lang="en" className="overscroll-none">
 			<head>
@@ -67,6 +70,7 @@ export default async function RootLayout({ children }) {
 				{children}
 				<FooterBar />
 			</body>
+			{gaId && <GoogleAnalytics gaId={gaId} />}
 		</html>
 	);
 }
