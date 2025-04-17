@@ -26,3 +26,9 @@ Any Assets that represents Logo or Intellectual Property of any legal establishm
 
 - 🆕 Integrated Google Analytics for better insights and tracking
 - 🐞 Fixed issue where the same blog post card which is being currently read appeared again in suggestion sections
+
+##### **v0.5.1:**
+
+- 💅 About Page: Renamed Illustrate-ions: cartoonist images to Artillus: Minimalistic Cartoonish Images
+- 💅 About Page: Updated the proper link for "How I manage email" button
+- 💅 Post Page: All links inside posts now open in a new tab automatically

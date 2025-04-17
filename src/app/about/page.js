@@ -122,8 +122,8 @@ export default async function AboutPage() {
 						understanding of design.
 					</p>
 					<ButtonLink
-						link={process.env.ILUSTRATEION_REPO_URL}
-						content={"ILLUSTRATE-IONS: CARTOONIST IMAGES"}
+						link={process.env.ILUSTRATION_REPO_URL}
+						content={"ARTILLUS: MINIMALISTIC CARTOON ILLUSTRATIONS"}
 						isNewTab={true}
 					/>
 				</div>
@@ -183,7 +183,9 @@ export default async function AboutPage() {
 						<span className="font-black">joe (at) mindoff.work</span>
 					</p>
 					<ButtonLink
-						link={"/design/the-zero-inbox-organizational-system"}
+						link={
+							"/posts/zero-inbox-method-a-practical-guide-to-stay-on-top-of-messages"
+						}
 						content={"Learn How I manage mails"}
 					/>
 				</div>
