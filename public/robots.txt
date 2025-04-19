@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.mindoff.work
+
+# Sitemaps
+Sitemap: https://www.mindoff.work/sitemap.xml

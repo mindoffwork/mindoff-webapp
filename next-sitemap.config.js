@@ -1,4 +1,4 @@
 module.exports = {
-	siteUrl: "https://mindoff.work",
+	siteUrl: "https://www.mindoff.work",
 	generateRobotsTxt: true,
 };
