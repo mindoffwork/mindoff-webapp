@@ -32,3 +32,10 @@ Any Assets that represents Logo or Intellectual Property of any legal establishm
 - 💅 About Page: Renamed Illustrate-ions: cartoonist images to Artillus: Minimalistic Cartoonish Images
 - 💅 About Page: Updated the proper link for "How I manage email" button
 - 💅 Post Page: All links inside posts now open in a new tab automatically
+
+##### **v0.5.2:**
+
+- 🆕 Sitemap Generation: Added Next-Sitemap Package to generate sitemap and robots.txt on build
+- 💅 API calls: Remove Cache-Control: no-store
+- 💅 Save as App Feature: Added Apple Icon, Icon1 and Icon2
+- 💅 manifest.wemanifest: Updated Name, Shortname and Description
