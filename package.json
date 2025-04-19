@@ -6,7 +6,8 @@
     "dev": "next dev -p 4200",
     "build": "next build",
     "start": "next start -p 4200",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@next/third-parties": "^15.3.0",
@@ -16,6 +17,7 @@
     "eslint-plugin-next": "^0.0.0",
     "html-react-parser": "^5.1.18",
     "next": "^14.2.21",
+    "next-sitemap": "^4.2.3",
     "nextjs-toploader": "^3.7.15",
     "postcss": "^8.4.49",
     "react": "^18.3.1",
